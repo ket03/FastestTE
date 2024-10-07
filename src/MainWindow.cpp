@@ -123,7 +123,8 @@ void InitSecondWindow(Appearance &appearance) {
 
   settings_widget->labelcolor(fl_rgb_color(appearance.text_color.red, appearance.text_color.green, appearance.text_color.blue));
   settings_widget->labelsize(appearance.text_size);
-  settings_widget->align(FL_ALIGN_TOP | FL_ALIGN_INSIDE);
+  // settings_widget->align(FL_ALIGN_TOP | FL_ALIGN_INSIDE);
+  settings_widget->position(0, -100);
 
 
   settings_window->color(fl_rgb_color(appearance.interface_color.red, appearance.interface_color.green, appearance.interface_color.blue));
