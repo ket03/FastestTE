@@ -16,14 +16,15 @@
 #include <string>
 #include <unordered_map>
 
-#define SIZE_WINDOW_X 640
-#define SIZE_WINDOW_Y 480
-#define SIZE_SETTINGS_WINDOW_X 300
-#define SIZE_SETTINGS_WINDOW_Y 400
+#define MAINWINDOW_WIDTH 640
+#define MAINWINDOW_HEIGHT 480
+#define SECONDWINDOW_WIDTH 300
+#define SECONDWINDOW_HEIGHT 400
 #define SIDEBAR_WIDTH 200
 #define TOPBAR_HEIGHT 30
+#define BUTTON_WIDTH 175
+#define BUTTON_HEIGHT 40
 #define FILTER "*.txt"
-
 #define SETTINGS                                                                                                                                     \
   "CMD`,  Settings/Exit\n"                                                                                                                           \
   "CMD`+  Text size+\n"                                                                                                                              \
@@ -34,7 +35,14 @@
 
 using std::unordered_map, std::string, std::ifstream, std::ofstream, std::stoi;
 
+extern Fl_Window *globalWindow;
+extern Fl_Window *globalSettingsWindow;
+extern Fl_Text_Editor *globalTextEditor;
+extern Fl_Box *globalSidebar;
+extern string PATH;
+
 void Parse(unordered_map<string, string> &data, const string &path);
+int handle_shortcuts(int event);
 
 struct RGB {
   u_char red;
@@ -72,5 +80,6 @@ public:
     text_size = stoi(config["TEXT_SIZE"]);
   }
 };
+extern Appearance *globalAppearance;
 
 #endif // MAINWINDOW_HPP
