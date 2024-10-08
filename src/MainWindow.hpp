@@ -39,6 +39,8 @@ extern Fl_Window *globalWindow;
 extern Fl_Window *globalSettingsWindow;
 extern Fl_Text_Editor *globalTextEditor;
 extern Fl_Box *globalSidebar;
+extern Fl_Box *globalSeparator;
+extern Fl_Box *globalTopbar;
 extern string PATH;
 
 void Parse(unordered_map<string, string> &data, const string &path);

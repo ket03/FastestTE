@@ -29,9 +29,7 @@ int handle_shortcuts(int event) {
   return 0;
 }
 
-void ShowSettingsWindow() {
-  globalSettingsWindow->shown() ? globalSettingsWindow->hide() : globalSettingsWindow->show();
-}
+void ShowSettingsWindow() { globalSettingsWindow->shown() ? globalSettingsWindow->hide() : globalSettingsWindow->show(); }
 
 void ChangeTextSize(char symbol) {
   int curr_pos = globalTextEditor->buffer()->length();
@@ -81,3 +79,5 @@ void SaveFile() {
       file_output << globalTextEditor->buffer()->text();
   }
 }
+
+void WriteIntoConfig() {}
